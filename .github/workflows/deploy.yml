@@ -1,1 +1,18 @@
+name: Terraform Deployment
 
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+    environment: ${{ github.ref == 'refs/heads/main' && 'prod' || 'dev' }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Terraform Plan
+        run: echo "hello"
