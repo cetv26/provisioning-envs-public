@@ -1,1 +1,27 @@
+name: Terraform
 
+on:
+  workflow_call:
+    inputs:
+      working_directory:
+        type: string
+        required: true
+      tf_workspace_name:
+        type: string
+        required: true
+      environment:
+        type: string
+  
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+    env:
+      TF_WORKSPACE: ${{inputs.tf_workspace_name}}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Terraform Init
+        run: |
+          echo "hello world ${TF_WORKSPACE}"
