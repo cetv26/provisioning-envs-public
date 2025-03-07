@@ -11,4 +11,5 @@ jobs:
     secrets: inherit
     with:
       working_directory: terraform/env/dev
-      tf_workspace_name: terraform-dev        
+      tf_workspace_name: terraform-dev
+      environment: prod
