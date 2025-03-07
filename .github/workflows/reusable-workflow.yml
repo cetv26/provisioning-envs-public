@@ -30,7 +30,6 @@ jobs:
 
 
   apply:
-    if: false
     environment: ${{inputs.environment}}
     needs: plan
     runs-on: ubuntu-latest
