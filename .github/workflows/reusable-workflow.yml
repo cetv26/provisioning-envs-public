@@ -28,3 +28,4 @@ jobs:
       - name: Terraform Init
         run: |
           echo "hello world ${TF_WORKSPACE}"
+          echo "environment: '${{inputs.environment}}'"
