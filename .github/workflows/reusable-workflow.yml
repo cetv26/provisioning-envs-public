@@ -15,7 +15,21 @@ on:
         type: string
   
 jobs:
-  terraform:
+  plan:
+    runs-on: ubuntu-latest
+    env:
+      TF_WORKSPACE: ${{inputs.tf_workspace_name}}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Terraform plan
+        run: |
+          echo "hello plan ${TF_WORKSPACE}"
+
+
+  apply:
     environment: ${{inputs.environment}}
     runs-on: ubuntu-latest
     env:
@@ -25,7 +39,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Terraform Init
+      - name: Terraform apply
         run: |
-          echo "hello world ${TF_WORKSPACE}"
+          echo "hello apply ${TF_WORKSPACE}"
           echo "environment: '${{inputs.environment}}'"
