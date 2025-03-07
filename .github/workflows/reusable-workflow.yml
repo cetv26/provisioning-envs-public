@@ -10,12 +10,12 @@ on:
         type: string
         required: true
       environment:
+        description: "Deployment environment (optional)"
+        required: false
         type: string
-        default: '' 
   
 jobs:
   terraform:
-    if: ${{inputs.environment}} != ''
     environment: ${{inputs.environment}}
     runs-on: ubuntu-latest
     env:
