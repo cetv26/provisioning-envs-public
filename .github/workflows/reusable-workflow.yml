@@ -11,10 +11,11 @@ on:
         required: true
       environment:
         type: string
-        default: none 
+        default: '' 
   
 jobs:
   terraform:
+    if: ${{inputs.environment}} != ''
     environment: ${{inputs.environment}}
     runs-on: ubuntu-latest
     env:
