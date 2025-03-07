@@ -7,7 +7,7 @@ on:
 
 jobs:
   terraform:
-    uses: cetv26/common-workflows/.github/workflows/terraform.yml@main
+    uses: cetv26/provisioning-envs-public/.github/workflows/reusable-workflow.yml@main
     secrets: inherit
     with:
       working_directory: terraform/env/dev
