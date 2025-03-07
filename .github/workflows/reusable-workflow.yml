@@ -14,7 +14,7 @@ on:
   
 jobs:
   terraform:
-    environment: ''
+    environment: default
     runs-on: ubuntu-latest
     env:
       TF_WORKSPACE: ${{inputs.tf_workspace_name}}
